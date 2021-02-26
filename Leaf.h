@@ -1,7 +1,7 @@
 template<class T> class CLeaf
 {
 private:
-    T m_Data;
+    T m_tData;
     CLeaf* m_pLeft;
     CLeaf* m_pRight;
     CLeaf* m_pParent;
@@ -9,13 +9,13 @@ private:
 public:
 
     CLeaf();
-    CLeaf(T DataNew,  CLeaf* pParentNew);
+    CLeaf(T tDataNew,  CLeaf* pParentNew);
     CLeaf( CLeaf &CopyObject );
     
     ~CLeaf();
 
     /* Setters */
-    void SetData(T DataNew);
+    void SetData(T tDataNew);
     void SetLeft(CLeaf *pLeftNew);
     void SetRight(CLeaf *pRightNew);
     void SetParent(CLeaf *pParentNew);

@@ -20,23 +20,23 @@ template <class T> void CBinaryTree<T>::DeleteTree(CLeaf<T> *pLeaf)
 {
     bool bStatus = false;
     
-    if(pLeaf->m_pLeft == nullptr && pLeaf->m_pRight == nullptr)
+    if(pLeaf->GetLeft() == nullptr && pLeaf->GetRight() == nullptr)
     {
         bStatus = true;
         delete pLeaf;
     }
-    if(pLeaf->m_pLeft != nullptr && !bStatus)
+    if(pLeaf->GetLeft() != nullptr && !bStatus)
     {
-        DeleteTree(pLeaf->m_pLeft);
+        DeleteTree(pLeaf->GetLeft());
     }
-    if(pLeaf->m_pRight != nullptr && !bStatus)
+    if(pLeaf->GetRight() != nullptr && !bStatus)
     {
-        DeleteTree(pLeaf->m_pRight);
+        DeleteTree(pLeaf->GetRight());
     }
 
-    if(bStatus && pLeaf->m_pParent != nullptr)
+    if(bStatus && pLeaf->GetParent() != nullptr)
     {
-        DeleteTree(pLeaf->m_pParent);
+        DeleteTree(pLeaf->GetParent());
     }
     
     

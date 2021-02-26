@@ -3,7 +3,7 @@
 /* Default constructor */
 template <class T> CLeaf<T>::CLeaf()
 {
-    this->m_Data = 0;
+    this->m_tData = 0;
     this->m_pLeft = nullptr;
     this->m_pRight = nullptr;
     this->m_pParent = nullptr;
@@ -11,15 +11,15 @@ template <class T> CLeaf<T>::CLeaf()
 /* Copy constructor */
 template <class T> CLeaf<T>::CLeaf( CLeaf &CopyObject )
 {
-    this->m_Data = CopyObject.m_Data;
+    this->m_tData = CopyObject.m_Data;
     this->m_pLeft = CopyObject.m_pLeft;
     this->m_pRight = CopyObject.m_pRight;
     this->m_pParent = CopyObject.m_pParent; 
 }
 /* Custom constructor */
-template <class T> CLeaf<T>::CLeaf(T DataNew,  CLeaf* pParentNew)
+template <class T> CLeaf<T>::CLeaf(T tDataNew,  CLeaf* pParentNew)
 {
-    this->m_iData = DataNew;
+    this->m_tData = tDataNew;
     this->m_pParent = pParentNew;
     this->m_pLeft = nullptr;
     this->m_pRight = nullptr;
@@ -34,9 +34,9 @@ template <class T> CLeaf<T>::~CLeaf()
 }
 
 /* Defining Setters */
-template <class T> void CLeaf<T>::SetData(T DataNew)
+template <class T> void CLeaf<T>::SetData(T tDataNew)
 {
-    this->m_Data = DataNew;
+    this->m_tData = tDataNew;
 }
 
 template <class T> void CLeaf<T>::SetLeft(CLeaf *pLeftNew)
@@ -57,7 +57,7 @@ template <class T> void CLeaf<T>::SetParent(CLeaf *pParentNew)
 /* Defining Getters */
 template <class T> T CLeaf<T>::GetData () const
 {
-    return this->m_Data;
+    return this->m_tData;
 }
 
 template<class T> CLeaf<T> *CLeaf<T>::GetLeft() const
