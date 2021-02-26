@@ -3,7 +3,7 @@
 /* Default constructor */
 template <class T> CLeaf<T>::CLeaf()
 {
-    this->m_Data = NULL;
+    this->m_Data = 0;
     this->m_pLeft = nullptr;
     this->m_pRight = nullptr;
     this->m_pParent = nullptr;
