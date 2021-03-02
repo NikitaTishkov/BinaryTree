@@ -14,9 +14,14 @@ int main()
         MyTree.AddLeaf( array[i], data[i]);
     }
 
-    MyTree.ShowSorted();
+    //MyTree.ShowSorted();
 
-    cout << "find 13: " << MyTree.FindValByKey(13) << endl;
+    CSortedArr<double> CArray;
+    MyTree.GetSortedArray(&CArray);
+    for(int i = 0; i < MyTree.GetSize(); i++)
+    {
+        cout << "Key: " << CArray.m_iaKeyArr[i] << " Elem: " << CArray.m_aArr[i] << endl; 
+    }
 
     /*
     cout << MyTree.GetBegin()->GetKey() << endl;
