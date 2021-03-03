@@ -1,4 +1,4 @@
-
+#include <iostream>
 #include "Tree.h"
 using std::cout;
 using std::endl;
@@ -11,12 +11,25 @@ public:
     int *m_iaKeyArr;
     T *m_aArr;
     int fullness;
+    CSortedArr()
+    {
+        this->fullness = 0;
+    }
+
+    ~CSortedArr()
+    {
+        if(m_aArr != nullptr)
+            delete [] m_aArr;
+
+        if(m_iaKeyArr != nullptr)
+            delete [] m_iaKeyArr;
+    }
 };
 
 /* Class definition */
 template <class T> 
 class CSearchTree : public CBinaryTree<T> {
-private:
+protected:
 
     void AddLeafRecur(int iKeyNew, T tValNew, CLeaf<T>* pBegin);
     void ShowSortedRecur(CLeaf<T> *pLeaf) const;
@@ -27,7 +40,7 @@ public:
     CSearchTree();
     ~CSearchTree();
 
-    void AddLeaf(int iKeyNew, T tValNew);
+    virtual void AddLeaf(int iKeyNew, T tValNew);
     void ShowSorted() const;
     void GetSortedArray(CSortedArr<T> *aSorted);
     T FindValByKey(int iKeyNew);
@@ -67,7 +80,7 @@ template <class T> void CSearchTree<T>::AddLeafRecur( int iKeyNew, T tValNew, CL
             
         }else
         {
-            pBegin->SetRight(new CLeaf<T>( iKeyNew, tValNew, pBegin)); 
+            pBegin->SetRight(new CLeaf<T>( iKeyNew, tValNew)); 
             
         }
     }
@@ -79,7 +92,7 @@ template <class T> void CSearchTree<T>::AddLeafRecur( int iKeyNew, T tValNew, CL
             AddLeafRecur( iKeyNew, tValNew, pBegin->GetLeft());
         }else
         {
-            pBegin->SetLeft(new CLeaf<T>( iKeyNew, tValNew, pBegin)); 
+            pBegin->SetLeft(new CLeaf<T>( iKeyNew, tValNew)); 
             
         }
     }

@@ -20,6 +20,9 @@ public:
     void SetSize(int iSizeNew);
     CLeaf<T>* GetBegin() const;
     int GetSize() const;
+
+    
+
 };
 
 /* Recursive delete function for destructor */
@@ -42,7 +45,7 @@ template <class T> void CBinaryTree<T>::DeleteTree(CLeaf<T> *pLeaf)
 template <class T> CBinaryTree<T>::CBinaryTree()
 {
     this->m_pBegin = new CLeaf<T>();
-    this->m_iSize = 1;
+    this->m_iSize = 0;
 }
 
 /* Destructor */

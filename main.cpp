@@ -1,11 +1,12 @@
 #include <iostream>
-#include "SearchTree.h"
+#include "BalancedTree.h"
 
 using std::cout;
 using std::endl;
 
 int main()
 {
+/*
     CSearchTree<double> MyTree;
     int array[10] = {15, 13, 19, 6, 14, 18, 3, 17, 16, 11};
     double data[10] = {27.3, 26, 23, 32, 53, 456, 43, 43, 43, 10};
@@ -22,8 +23,18 @@ int main()
     {
         cout << "Key: " << CArray.m_iaKeyArr[i] << " Elem: " << CArray.m_aArr[i] << endl; 
     }
+*/
+    CBalancedTree<int> MyTree;
 
-    /*
+    int array[10] = {15, 13, 19, 6, 14, 18, 3, 17, 16, 11};
+    double data[10] = {27.3, 26, 23, 32, 53, 456, 43, 43, 43, 10};
+    for(int i = 0; i < 10; i++)
+
+    {
+        MyTree.AddLeaf( array[i], data[i]);
+    }
+
+    
     cout << MyTree.GetBegin()->GetKey() << endl;
     cout << MyTree.GetBegin()->GetData() << endl;
 
@@ -37,6 +48,6 @@ int main()
     cout << MyTree.GetBegin()->GetRight()->GetLeft()->GetData() << endl;
 
     cout << MyTree.GetBegin()->GetLeft()->GetLeft()->GetRight()->GetKey() << endl;
-    cout << MyTree.GetBegin()->GetLeft()->GetLeft()->GetRight()->GetData() << endl;*/
+    cout << MyTree.GetBegin()->GetLeft()->GetLeft()->GetRight()->GetData() << endl;
     return 0;
 }
