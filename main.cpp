@@ -34,19 +34,23 @@ int main()
         MyTree.AddLeaf( array[i], data[i]);
     }
 
-    
+    cout << "Root element" << endl;
     cout << MyTree.GetBegin()->GetKey() << endl;
     cout << MyTree.GetBegin()->GetData() << endl;
 
+    cout << "Right elem" << endl;
     cout << MyTree.GetBegin()->GetRight()->GetKey() << endl;
     cout << MyTree.GetBegin()->GetRight()->GetData() << endl;
 
+    cout << "Left element" << endl;
     cout << MyTree.GetBegin()->GetLeft()->GetKey() << endl;
     cout << MyTree.GetBegin()->GetLeft()->GetData() << endl;
 
+    cout << "Right->Left elem:" << endl;
     cout << MyTree.GetBegin()->GetRight()->GetLeft()->GetKey() << endl;
     cout << MyTree.GetBegin()->GetRight()->GetLeft()->GetData() << endl;
 
+    cout << "Left->left->right element:" << endl;
     cout << MyTree.GetBegin()->GetLeft()->GetLeft()->GetRight()->GetKey() << endl;
     cout << MyTree.GetBegin()->GetLeft()->GetLeft()->GetRight()->GetData() << endl;
     return 0;
