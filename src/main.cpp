@@ -1,5 +1,5 @@
 #include <iostream>
-#include "BalancedTree.h"
+#include "../inc/BalancedTree.h"
 
 using std::cout;
 using std::endl;
